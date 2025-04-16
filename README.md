@@ -14,22 +14,22 @@ Los estudiantes que pertenecemos al grupo somos:
 ## Características Principales
 
 ## Gestión de Empleados:
-    * Registro de nuevos empleados con información como ID, nombre, apellido, correo, teléfono, rol, usuario de login, contraseña, fecha de contratación y salario.
-    * Eliminación de empleados por ID. 
-    * Modificación del salario y teléfono de los empleados. 
+*  Registro de nuevos empleados con información como ID, nombre, apellido, correo, teléfono, rol, usuario de login, contraseña, fecha de contratación y salario.
+* Eliminación de empleados por ID. 
+* Modificación del salario y teléfono de los empleados. 
 ## Gestión de Clientes:
-    * Registro de nuevos clientes con información como ID, nombre, apellido, correo, teléfono, tipo de membresía, fecha de inicio de membresía y estado de la membresía.
-    * Eliminación de clientes por ID. 
+* Registro de nuevos clientes con información como ID, nombre, apellido, correo, teléfono, tipo de membresía, fecha de inicio de membresía y estado de la membresía.
+* Eliminación de clientes por ID. 
 ## Gestión de Máquinas:
-    * Registro de nuevas máquinas con información como ID, nombre, tipo, marca, estado, fecha de adquisición y ubicación.
-    * Eliminación de máquinas por ID.
+* Registro de nuevas máquinas con información como ID, nombre, tipo, marca, estado, fecha de adquisición y ubicación.
+* Eliminación de máquinas por ID.
 ## Listado de Información:
-    * Capacidad de listar todos los empleados, clientes y máquinas registrados en el sistema. [cite: 8]
+* Capacidad de listar todos los empleados, clientes y máquinas registrados en el sistema. [cite: 8]
 ## Validaciones:
-    * Validación de formato de correo electrónico.
-    * Validación de formato de número de teléfono (10 dígitos numéricos). 
+* Validación de formato de correo electrónico.
+* Validación de formato de número de teléfono (10 dígitos numéricos). 
 ## Manejo de Excepciones:
-    * Manejo de la excepción `ValueError` para asegurar que las entradas de ID y salario sean numéricas.
+* Manejo de la excepción `ValueError` para asegurar que las entradas de ID y salario sean numéricas.
 
 ## Estructura del Proyecto
 
