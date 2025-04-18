@@ -2,6 +2,9 @@
 
 Este proyecto implementa un sistema básico de gestión para un gimnasio, utilizando Python y principios de Programación Orientada a Objetos (POO). El sistema permite administrar empleados, clientes y máquinas, proporcionando funcionalidades para registrar, eliminar, modificar y listar información.
 
+La explicación detallada de cómo se implementaron los distintos temas se encuentra en el título `implementación`. 
+
+
 ## Estudiantes
 Los estudiantes que pertenecemos al grupo somos:
 
@@ -55,4 +58,36 @@ El proyecto se organiza en los siguientes archivos:
 1.  Ejecute el archivo `main.py`.
 2.  Seleccion de un menú de opciones para realizar la operación deseada.
 3.  Siga las instrucciones en pantalla.
+
+
+## Implementación
+
+Este proyecto fue desarrollado aplicando los principios fundamentales de la Programación Orientada a Objetos (POO). A continuación se describe cómo se implementaron los principales conceptos:
+
+### Encapsulamiento
+
+Se implementa en la clase `Empleado` mediante el uso de atributos privados (`__salario`, `__contrasena_hash`). En lugar de almacenar la contraseña en texto plano, se guarda su representación segura utilizando hashing SHA-256. El acceso está controlado a través de los métodos `set_contrasena()` (que incluye validación de seguridad) y `verificar_contrasena()` (para autenticación).  
+En la clase `Cliente`, se encapsula el atributo `__estado_membresia` y se controla su modificación mediante un setter que restringe los valores permitidos.
+
+
+### Constructores
+Todas las clases (`Usuario`, `Cliente`, `Empleado`, `Maquina`) cuentan con constructores (`__init__`) que inicializan los atributos necesarios al momento de crear una instancia. También se gestionan contadores de IDs únicos desde la clase `Gimnasio`.
+
+### Herencia
+Las clases `Cliente` y `Empleado` heredan de la clase base `Usuario`, aprovechando atributos comunes como `id_usuario`, `nombre`, `correo`, etc. Esto reduce la duplicación de código y refuerza el diseño jerárquico del sistema.
+
+### Sobreescritura de métodos
+Se sobreescribe el método `mostrar_informacion()` en `Cliente` y `Empleado` para personalizar la salida de acuerdo con cada tipo de usuario.
+
+### Polimorfismo
+Se utiliza polimorfismo al iterar sobre listas de `Cliente` y `Empleado` (ambos subtipos de `Usuario`) y llamar a `mostrar_informacion()` sin necesidad de conocer la clase exacta. También se aplica al usar la clase abstracta `GeneradorReporte`, de la cual heredan `ReporteClientes` y `ReporteEmpleados`.
+
+### Clases abstractas
+La clase `Usuario` fue definida como clase abstracta (`ABC`) con el método abstracto `mostrar_informacion()`, que deben implementar obligatoriamente las subclases. Esto asegura una interfaz común entre tipos de usuario.
+
+### Interfaces (mediante clases abstractas)
+Se simula el uso de interfaces con la clase `GeneradorReporte` (abstracta), que obliga a las subclases como `ReporteClientes` y `ReporteEmpleados` a implementar el método `generar()`, permitiendo una estructura flexible para generación de reportes.
+
+### Composición
+La clase `Gimnasio` está compuesta por listas de objetos de otras clases (`Cliente`, `Empleado`, `Maquina`), lo que representa una relación “tiene un”. Esta estructura permite que `Gimnasio` orqueste las operaciones del sistema sin heredar directamente de las demás clases.
 
