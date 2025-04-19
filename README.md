@@ -55,14 +55,28 @@ El proyecto se organiza en los siguientes archivos:
 
 ## Uso
 
-1.  Ejecute el archivo `main.py`.
-2.  Seleccion de un menú de opciones para realizar la operación deseada.
-3.  Siga las instrucciones en pantalla.
+1. Clona este repositorio o descarga los archivos del proyecto.
+2. Asegúrate de que la carpeta contenga la siguiente estructura:
+
+proyecto/ 
+├── main.py 
+└── modelos/ 
+    ├── __init__.py 
+    ├── cliente.py 
+    ├── empleado.py 
+    ├── gimnasio.py 
+    ├── maquina.py 
+    ├── reporte_generadores.py
+    ├── usuario.py 
+    └── utilities.py
+3.  Ejecuta el archivo `main.py`.
+4.  Selección de un menú de opciones para realizar la operación deseada.
+5.  Sigue las instrucciones en pantalla.
 
 
 ## Implementación
 
-Este proyecto fue desarrollado aplicando los principios fundamentales de la Programación Orientada a Objetos (POO). A continuación se describe cómo se implementaron los principales conceptos:
+Este proyecto fue desarrollado aplicando los principios fundamentales de la Programación Orientada a Objetos (POO) y siguiendo los ejemplos planteados en clase por la docente. A continuación se describe cómo se implementaron los principales conceptos:
 
 ### Encapsulamiento
 
