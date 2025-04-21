@@ -105,3 +105,5 @@ Se simula el uso de interfaces con la clase `GeneradorReporte` (abstracta), que 
 ### Composición
 La clase `Gimnasio` está compuesta por listas de objetos de otras clases (`Cliente`, `Empleado`, `Maquina`), lo que representa una relación “tiene un”. Esta estructura permite que `Gimnasio` orqueste las operaciones del sistema sin heredar directamente de las demás clases.
 
+### Excepciones personalizadas
+La clase `Gimnasio` en el método `registrar_cliente` utiliza una excepción personalizada que se dispara cuando la opción ingresada no está dentro de las opciones. Se utiliza una función `validar_opciones` que retorta True cuando es una opción correcta o dispara la excepción personalizada en caso contrario.
