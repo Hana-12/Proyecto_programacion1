@@ -2,7 +2,9 @@
 
 Este proyecto implementa un sistema básico de gestión para un gimnasio, utilizando Python y principios de Programación Orientada a Objetos (POO). El sistema permite administrar empleados, clientes y máquinas, proporcionando funcionalidades para registrar, eliminar, modificar y listar información.
 
-La explicación detallada de cómo se implementaron los distintos temas se encuentra en el título `implementación`. 
+La explicación detallada de cómo se implementaron los distintos temas se encuentra en el título `Implementación`. 
+
+
 
 
 ## Estudiantes
@@ -16,23 +18,24 @@ Los estudiantes que pertenecemos al grupo somos:
 
 ## Características Principales
 
-## Gestión de Empleados:
+### Gestión de Empleados:
 *  Registro de nuevos empleados con información como ID, nombre, apellido, correo, teléfono, rol, usuario de login, contraseña, fecha de contratación y salario.
 * Eliminación de empleados por ID. 
 * Modificación del salario y teléfono de los empleados. 
-## Gestión de Clientes:
+### Gestión de Clientes:
 * Registro de nuevos clientes con información como ID, nombre, apellido, correo, teléfono, tipo de membresía, fecha de inicio de membresía y estado de la membresía.
 * Eliminación de clientes por ID. 
-## Gestión de Máquinas:
+### Gestión de Máquinas:
 * Registro de nuevas máquinas con información como ID, nombre, tipo, marca, estado, fecha de adquisición y ubicación.
 * Eliminación de máquinas por ID.
-## Listado de Información:
+### Listado de Información:
 * Capacidad de listar todos los empleados, clientes y máquinas registrados en el sistema. [cite: 8]
-## Validaciones:
+### Validaciones:
 * Validación de formato de correo electrónico.
 * Validación de formato de número de teléfono (10 dígitos numéricos). 
-## Manejo de Excepciones:
+### Manejo de Excepciones:
 * Manejo de la excepción `ValueError` para asegurar que las entradas de ID y salario sean numéricas.
+* Excepción personalizada para el tipo de membresía del cliente.
 
 ## Estructura del Proyecto
 
@@ -44,6 +47,9 @@ El proyecto se organiza en los siguientes archivos:
 * `modelos/empleado.py`:  Clase `Empleado` que representa a un empleado del gimnasio.
 * `modelos/maquina.py`:  Clase `Maquina` que representa una máquina del gimnasio. 
 * `modelos/usuario.py`: Clase `Usuario` que representa a un usuario genérico (superclase (herencia) de Cliente y Empleado).
+* `modelos/utilities.py`: Almacenamiento de funciones auxiliares y de la excepción personalizada.
+* `modelos/reporte_generadores.py`: Clases que ayudan a generar los reportes y a mostrar la utilidad de las clases abstractas.
+
 
 ## Clases Principales
 
@@ -107,3 +113,10 @@ La clase `Gimnasio` está compuesta por listas de objetos de otras clases (`Clie
 
 ### Excepciones personalizadas
 La clase `Gimnasio` en el método `registrar_cliente` utiliza una excepción personalizada que se dispara cuando la opción ingresada no está dentro de las opciones. Se utiliza una función `validar_opciones` que retorta True cuando es una opción correcta o dispara la excepción personalizada en caso contrario.
+
+## Futuras versiones
+
+En posteriores desarrollos del aplicativo se podrían agregar validadores adicionales, como a las fechas y a las opciones de ciertos registros.
+
+De igual manera se buscaría que la información fuera persistente, almacenando la data en archivos, para que cuando se cierre y se vuelva a iniciar el programa, la data se mantenga. 
+
