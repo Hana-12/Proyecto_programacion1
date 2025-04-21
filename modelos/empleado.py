@@ -40,7 +40,15 @@ class Empleado(Usuario):
         self.fecha_contratacion = fecha_contratacion
         self.__salario = salario
         self.set_contrasena(contrasena)  # Aplica validación y hashing
+    
+    def __str__(self):
+        """
+        Representación en cadena del empleado.
 
+        Returns:
+            str: Nombre, id y rol en formato legible.
+        """
+        return f"{self.nombre} ({self.id_usuario}) - {self.rol}"
 
     def get_salario(self):
         """Retorna el salario del empleado."""

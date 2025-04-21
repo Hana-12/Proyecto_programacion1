@@ -33,6 +33,16 @@ class Cliente(Usuario):
         self.fecha_inicio_membresia = fecha_inicio_membresia
         self.set_estado_membresia(estado_membresia)  # Usa setter para validación
 
+    def __str__(self):
+        """
+        Representación en cadena del cliente.
+
+        Returns:
+            str: Nombre, id y membresia en formato legible.
+        """
+        return f"{self.nombre} ({self.id_usuario}) - {self.membresia_tipo}"
+
+
     def get_estado_membresia(self):
         """
         Retorna el estado actual de la membresía.

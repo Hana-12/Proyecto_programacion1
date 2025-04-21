@@ -311,7 +311,7 @@ class Gimnasio:
             print("No hay empleados registrados.")
         else:
             for empleado in self.empleados:
-                print(empleado.mostrar_informacion())
+                print(empleado)
 
 #Listar clientes
 
@@ -330,7 +330,7 @@ class Gimnasio:
             print("No hay clientes registrados.")
         else:
             for cliente in self.usuarios:
-                print(cliente.mostrar_informacion())
+                print(cliente)
 
 #Listar maquinas
 
