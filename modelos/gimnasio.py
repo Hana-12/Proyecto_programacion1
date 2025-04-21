@@ -1,8 +1,9 @@
 from .cliente import Cliente
 from .empleado import Empleado
 from .maquina import Maquina
-from .utilities import validar_correo, validar_telefono
+from .utilities import validar_correo, validar_telefono, validar_opciones
 from .reporte_generadores import ReporteClientes, ReporteEmpleados
+from .utilities import InvalidOptionException
 
 
 class Gimnasio:
@@ -201,15 +202,29 @@ class Gimnasio:
                 print("Error: Ya existe un cliente registrado con ese correo.")
                 return
 
-        membresia_tipo = input("Tipo de membresia (mensual/trimestral/anual): ")
+        while True:
+            try:
+                opcion = input("Tipo de membresia (mensual/trimestral/anual): ").lower()
+                if validar_opciones(opcion, ["mensual","trimestral","anual"]):
+                    membresia_tipo = opcion
+                    break
+            except InvalidOptionException as e:
+                print(e)
+
+        
         fecha_inicio_membresia = input("Fecha de inicio de membresia:DD/MM/AAAA ")
         estado = input("Estado de la membresia (activa/inactiva): ")
 
-        cliente = Cliente(id_usuario, nombre, apellido, correo, 
-                          telefono, membresia_tipo, 
-                          fecha_inicio_membresia, estado)
-        self.usuarios.append(cliente)
-        print(f"Cliente registrado correctamente. Con ID {id_usuario} y usuario login {correo}")
+        try:
+            cliente = Cliente(id_usuario, nombre, apellido, correo, 
+                            telefono, membresia_tipo, 
+                            fecha_inicio_membresia, estado)
+            self.usuarios.append(cliente)
+            print(f"Cliente registrado correctamente. Con ID {id_usuario} y usuario login {correo}")
+
+        except ValueError as e:
+            print("Cliente no registrado")
+            print(e)
 
 #Eliminar cliente
 

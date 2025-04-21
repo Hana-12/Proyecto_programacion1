@@ -36,3 +36,24 @@ def validar_telefono(telefono):
     """
     return telefono.isdigit() and len(telefono) == 10
 
+
+def validar_opciones(opcion, opciones):
+    """
+    Valida si la opción es válida.
+
+    Verifica que las opciones estén entre las pensadas.
+
+    Args:
+        opcion (str): Opción escogida
+        opciones (str): Lista de opciones a validar.
+
+    Returns:
+        bool: True si el número es válido, raises exception si no.
+    """
+    if opcion not in opciones:
+        raise InvalidOptionException(f"Solo se puede escoger una de: {'/'.join(opciones)}")
+
+    return True
+
+class InvalidOptionException(Exception):
+    pass
